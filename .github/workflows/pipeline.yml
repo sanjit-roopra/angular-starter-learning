@@ -8,3 +8,24 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
+      - name: Build start target
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          target: start
+          tags: axiix/angular-starter-learning:start
+      - name: Build target
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          target: builder
+          tags: axiix/angular-starter-learning:build
+      - name: Build runtime target
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          target: runtime
+          tags: axiix/angular-starter-learning:runtime
