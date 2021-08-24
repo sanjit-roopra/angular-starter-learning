@@ -45,7 +45,7 @@ jobs:
           sed -i -e "s/HELM_VERSION/${{ steps.tag_version.outputs.new_version }}/g" charts/angular-starter-learning/Chart.yaml
           sed -i -e "s/BUILD_VERSION/${{ steps.tag_version.outputs.new_tag }}/g" charts/angular-starter-learning/values.yaml
       - name: Upload Helm chart
-          uses: actions/upload-artifact@v2
-          with:
-            path: charts
-            name: angular-starter-learning-chart
+        uses: actions/upload-artifact@v2
+        with:
+          path: charts
+          name: angular-starter-learning-chart
