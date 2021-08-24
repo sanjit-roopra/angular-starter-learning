@@ -49,3 +49,26 @@ jobs:
         with:
           path: charts
           name: angular-starter-learning-chart
+
+  deploy:
+    name: Deploy application
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Helm chart
+        uses: actions/download-artifact@v2
+        with:
+          name: angular-starter-learning-chart
+      - name: AKS set context
+        uses: azure/aks-set-context@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}' # Azure credentials
+          resource-group: 'web-viewer-tl-20210713-k8'
+          cluster-name: 'web-viewer-team-learning-20210713-kube'
+        id: login
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        id: install
+      - name: Deploy app
+        run: |
+          helm upgrade --install angular-starter-learning angular-starter-learning/
