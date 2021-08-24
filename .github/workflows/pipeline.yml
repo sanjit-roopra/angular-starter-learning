@@ -1,0 +1,10 @@
+name: Pipeline
+on: [push]
+
+jobs:
+  build:
+    name: Build our application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
