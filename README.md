@@ -1,3 +1,8 @@
+# GitHub Actions Learning
+
+This repository can be used as a introduction to GitHub Actions.
+PowerPoint can be found here: https://dedalusspa-my.sharepoint.com/:p:/g/personal/sanjit_roopra_dedalus_eu/EbGswfmlyZhEpUkIg7HoE7UB7B8Xc9qlNVpz68U1uPMvNw?e=MZXm1p
+
 # Angular 12 Example Starter
 
 <table>
